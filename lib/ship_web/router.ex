@@ -1,6 +1,8 @@
 defmodule ShipWeb.Router do
   use ShipWeb, :router
 
+  import ShipWeb.PlayerAuth
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -8,6 +10,7 @@ defmodule ShipWeb.Router do
     plug :put_root_layout, html: {ShipWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :fetch_current_player
   end
 
   pipeline :api do
@@ -39,6 +42,45 @@ defmodule ShipWeb.Router do
 
       live_dashboard "/dashboard", metrics: ShipWeb.Telemetry
       forward "/mailbox", Plug.Swoosh.MailboxPreview
+    end
+  end
+
+  ## Authentication routes
+
+  scope "/", ShipWeb do
+    pipe_through [:browser, :redirect_if_player_is_authenticated]
+
+    live_session :redirect_if_player_is_authenticated,
+      on_mount: [{ShipWeb.PlayerAuth, :redirect_if_player_is_authenticated}] do
+      live "/players/register", PlayerRegistrationLive, :new
+      live "/players/log_in", PlayerLoginLive, :new
+      live "/players/reset_password", PlayerForgotPasswordLive, :new
+      live "/players/reset_password/:token", PlayerResetPasswordLive, :edit
+    end
+
+    post "/players/log_in", PlayerSessionController, :create
+  end
+
+  scope "/", ShipWeb do
+    pipe_through [:browser, :require_authenticated_player]
+
+    live_session :require_authenticated_player,
+      on_mount: [{ShipWeb.PlayerAuth, :ensure_authenticated}] do
+      live "/game", GameLive
+      live "/players/settings", PlayerSettingsLive, :edit
+      live "/players/settings/confirm_email/:token", PlayerSettingsLive, :confirm_email
+    end
+  end
+
+  scope "/", ShipWeb do
+    pipe_through [:browser]
+
+    delete "/players/log_out", PlayerSessionController, :delete
+
+    live_session :current_player,
+      on_mount: [{ShipWeb.PlayerAuth, :mount_current_player}] do
+      live "/players/confirm/:token", PlayerConfirmationLive, :edit
+      live "/players/confirm", PlayerConfirmationInstructionsLive, :new
     end
   end
 end

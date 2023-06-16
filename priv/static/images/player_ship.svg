@@ -1,0 +1,59 @@
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:cc="http://web.resource.org/cc/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    id="svg1"
+    sodipodi:docname="kbattleship.svg"
+    viewBox="0 0 60 60"
+    sodipodi:version="0.32"
+    version="1.0"
+    inkscape:version="0.38.1"
+    sodipodi:docbase="/home/danny/flat/scalable/apps"
+  >
+  <path
+      id="path876"
+      style="stroke-linejoin:round;fill-rule:evenodd;stroke:#333333;stroke-linecap:round;stroke-width:1.875;fill:#7f7f7f"
+      transform="translate(4.4986 3.5989)"
+      d="m12.056 30.129l6.298-20.154 7.198 0.0001v20.874l-13.496-0.72z"
+      sodipodi:stroke-cmyk="(0.0000000 0.0000000 0.0000000 0.80000001)"
+  />
+  <path
+      id="path877"
+      style="stroke-linejoin:round;fill-rule:evenodd;stroke:#333333;stroke-linecap:round;stroke-width:1.875;fill:#4c4c4c"
+      transform="translate(4.4986 4.4986)"
+      d="m12.416 13.034l-1.437 5.364h21.231v-5.724l-19.794 0.36z"
+      sodipodi:stroke-cmyk="(0.0000000 0.0000000 0.0000000 0.80000001)"
+  />
+  <rect
+      id="rect878"
+      style="stroke-linejoin:round;fill-rule:evenodd;stroke:#333333;stroke-linecap:round;stroke-width:1.875;fill:#4c4c4c"
+      rx=".25652"
+      transform="matrix(.58784 -.80898 .80898 .58784 9.9018 3.0215)"
+      height="7.7377"
+      width="6.8379"
+      sodipodi:stroke-cmyk="(0.0000000 0.0000000 0.0000000 0.80000001)"
+      y="8.7154"
+      x="-24.113"
+  />
+  <path
+      id="path879"
+      style="stroke-linejoin:round;fill-rule:evenodd;stroke:#333333;stroke-linecap:round;stroke-width:1.875;fill:#7f7f7f"
+      transform="translate(.35989 3.9588)"
+      d="m35.989 28.33l3.963-6.864h13.132v6.504l-17.095 0.36z"
+      sodipodi:stroke-cmyk="(0.0000000 0.0000000 0.0000000 0.80000001)"
+  />
+  <path
+      id="path875"
+      style="stroke-linejoin:round;fill-rule:evenodd;stroke:#333333;stroke-linecap:round;stroke-width:3.125;fill:#7f7f7f"
+      d="m6.4781 27.07l7.6799 13.301h38.026l7.011-12.994-52.717-0.307z"
+      sodipodi:nodetypes="ccccc"
+      transform="translate(-2.5192 4.1388)"
+      sodipodi:stroke-cmyk="(0.0000000 0.0000000 0.0000000 0.80000001)"
+  />
+</svg>
