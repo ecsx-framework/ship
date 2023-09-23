@@ -51,7 +51,7 @@ defmodule Ship.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:ecsx, path: "../ecsx", override: true},
+      {:ecsx, "~> 0.5"},
       {:ecsx_live_dashboard, "~> 0.1"}
     ]
   end
