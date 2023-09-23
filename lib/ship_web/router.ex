@@ -40,7 +40,12 @@ defmodule ShipWeb.Router do
     scope "/dev" do
       pipe_through :browser
 
-      live_dashboard "/dashboard", metrics: ShipWeb.Telemetry
+      live_dashboard "/dashboard",
+        metrics: ShipWeb.Telemetry,
+        additional_pages: [
+          ecsx: ECSx.LiveDashboard.Page
+        ]
+
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
   end

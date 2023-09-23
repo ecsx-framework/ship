@@ -22,7 +22,7 @@ defmodule Ship.Systems.Projectile do
     projectiles = IsProjectile.get_all()
 
     Enum.each(projectiles, fn projectile ->
-      case ProjectileTarget.get_one(projectile, nil) do
+      case ProjectileTarget.get(projectile, nil) do
         nil ->
           # The target has already been destroyed
           destroy_projectile(projectile)
@@ -49,15 +49,15 @@ defmodule Ship.Systems.Projectile do
   end
 
   defp get_distance_to_target(projectile, target) do
-    target_x = XPosition.get_one(target)
-    target_y = YPosition.get_one(target)
-    target_dx = XVelocity.get_one(target)
-    target_dy = YVelocity.get_one(target)
+    target_x = XPosition.get(target)
+    target_y = YPosition.get(target)
+    target_dx = XVelocity.get(target)
+    target_dy = YVelocity.get(target)
     target_next_x = target_x + target_dx
     target_next_y = target_y + target_dy
 
-    x = XPosition.get_one(projectile)
-    y = YPosition.get_one(projectile)
+    x = XPosition.get(projectile)
+    y = YPosition.get(projectile)
 
     dx = target_next_x - x
     dy = target_next_y - y
@@ -71,11 +71,11 @@ defmodule Ship.Systems.Projectile do
   end
 
   defp damage_target(projectile, target) do
-    damage = ProjectileDamage.get_one(projectile)
-    reduction_from_armor = ArmorRating.get_one(target)
+    damage = ProjectileDamage.get(projectile)
+    reduction_from_armor = ArmorRating.get(target)
     final_damage_amount = damage - reduction_from_armor
 
-    target_current_hp = HullPoints.get_one(target)
+    target_current_hp = HullPoints.get(target)
     target_new_hp = target_current_hp - final_damage_amount
 
     HullPoints.update(target, target_new_hp)

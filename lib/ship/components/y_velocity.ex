@@ -3,6 +3,5 @@ defmodule Ship.Components.YVelocity do
   Documentation for YVelocity components.
   """
   use ECSx.Component,
-    value: :integer,
-    unique: true
+    value: :integer
 end

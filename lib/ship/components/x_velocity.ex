@@ -3,6 +3,5 @@ defmodule Ship.Components.XVelocity do
   Documentation for XVelocity components.
   """
   use ECSx.Component,
-    value: :integer,
-    unique: true
+    value: :integer
 end

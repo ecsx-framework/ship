@@ -3,6 +3,5 @@ defmodule Ship.Components.AttackCooldown do
   Documentation for AttackCooldown components.
   """
   use ECSx.Component,
-    value: :datetime,
-    unique: true
+    value: :datetime
 end

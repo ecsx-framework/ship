@@ -3,6 +3,5 @@ defmodule Ship.Components.ProjectileDamage do
   Documentation for ProjectileDamage components.
   """
   use ECSx.Component,
-    value: :integer,
-    unique: true
+    value: :integer
 end

@@ -3,6 +3,5 @@ defmodule Ship.Components.AttackRange do
   Documentation for AttackRange components.
   """
   use ECSx.Component,
-    value: :integer,
-    unique: true
+    value: :integer
 end

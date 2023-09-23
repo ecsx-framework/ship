@@ -3,6 +3,5 @@ defmodule Ship.Components.HullPoints do
   Documentation for HullPoints components.
   """
   use ECSx.Component,
-    value: :integer,
-    unique: true
+    value: :integer
 end

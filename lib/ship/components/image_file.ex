@@ -3,6 +3,5 @@ defmodule Ship.Components.ImageFile do
   Documentation for ImageFile components.
   """
   use ECSx.Component,
-    value: :binary,
-    unique: true
+    value: :binary
 end

@@ -3,6 +3,5 @@ defmodule Ship.Components.ProjectileTarget do
   Documentation for ProjectileTarget components.
   """
   use ECSx.Component,
-    value: :binary,
-    unique: true
+    value: :binary
 end

@@ -7,10 +7,10 @@ defmodule Ship.SystemUtils do
   alias Ship.Components.YPosition
 
   def distance_between(entity_1, entity_2) do
-    x_1 = XPosition.get_one(entity_1)
-    x_2 = XPosition.get_one(entity_2)
-    y_1 = YPosition.get_one(entity_1)
-    y_2 = YPosition.get_one(entity_2)
+    x_1 = XPosition.get(entity_1)
+    x_2 = XPosition.get(entity_2)
+    y_1 = YPosition.get(entity_1)
+    y_2 = YPosition.get(entity_2)
 
     x = abs(x_1 - x_2)
     y = abs(y_1 - y_2)

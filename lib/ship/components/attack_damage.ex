@@ -3,6 +3,5 @@ defmodule Ship.Components.AttackDamage do
   Documentation for AttackDamage components.
   """
   use ECSx.Component,
-    value: :integer,
-    unique: true
+    value: :integer
 end

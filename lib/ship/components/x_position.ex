@@ -3,6 +3,5 @@ defmodule Ship.Components.XPosition do
   Documentation for XPosition components.
   """
   use ECSx.Component,
-    value: :integer,
-    unique: true
+    value: :integer
 end

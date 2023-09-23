@@ -31,7 +31,7 @@ defmodule Ship.Systems.Targeting do
     |> Enum.reject(fn {possible_target, _hp} -> possible_target == self end)
     |> Enum.find(fn {possible_target, _hp} ->
       distance_between = SystemUtils.distance_between(possible_target, self)
-      range = AttackRange.get_one(self)
+      range = AttackRange.get(self)
 
       distance_between < range
     end)

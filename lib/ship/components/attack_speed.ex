@@ -3,6 +3,5 @@ defmodule Ship.Components.AttackSpeed do
   Documentation for AttackSpeed components.
   """
   use ECSx.Component,
-    value: :float,
-    unique: true
+    value: :float
 end

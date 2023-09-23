@@ -3,6 +3,5 @@ defmodule Ship.Components.ArmorRating do
   Documentation for ArmorRating components.
   """
   use ECSx.Component,
-    value: :integer,
-    unique: true
+    value: :integer
 end

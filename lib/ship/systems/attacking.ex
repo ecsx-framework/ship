@@ -29,7 +29,7 @@ defmodule Ship.Systems.Attacking do
 
   defp attack_if_ready({self, target}) do
     cond do
-      SystemUtils.distance_between(self, target) > AttackRange.get_one(self) ->
+      SystemUtils.distance_between(self, target) > AttackRange.get(self) ->
         # If the target ever leaves our attack range, we want to remove the AttackTarget
         # and begin searching for a new one.
         AttackTarget.remove(self)
@@ -46,9 +46,9 @@ defmodule Ship.Systems.Attacking do
   end
 
   defp spawn_projectile(self, target) do
-    attack_damage = AttackDamage.get_one(self)
-    x = XPosition.get_one(self)
-    y = YPosition.get_one(self)
+    attack_damage = AttackDamage.get(self)
+    x = XPosition.get(self)
+    y = YPosition.get(self)
     # Armor reduction should wait until impact to be calculated
     cannonball_entity = Ecto.UUID.generate()
 
@@ -73,7 +73,7 @@ defmodule Ship.Systems.Attacking do
   # We're going to model AttackSpeed with a float representing attacks per second.
   # The goal here is to convert that into milliseconds per attack.
   defp calculate_cooldown_time(self) do
-    attacks_per_second = AttackSpeed.get_one(self)
+    attacks_per_second = AttackSpeed.get(self)
     seconds_per_attack = 1 / attacks_per_second
 
     ceil(seconds_per_attack * 1000)

@@ -3,6 +3,5 @@ defmodule Ship.Components.AttackTarget do
   Documentation for AttackTarget components.
   """
   use ECSx.Component,
-    value: :binary,
-    unique: true
+    value: :binary
 end
