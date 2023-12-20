@@ -20,9 +20,11 @@ defmodule ShipWeb.GameLive do
       |> assign_loading_state()
 
     if connected?(socket) do
-      ECSx.ClientEvents.add(player.id, :spawn_ship)
-      # The first load will now have additional responsibilities
-      send(self(), :first_load)
+      unless PlayerSpawned.exists?(player.id) do
+        ECSx.ClientEvents.add(player.id, :spawn_ship)
+        # The first load will now have additional responsibilities
+        send(self(), :first_load)
+      end
     end
 
     {:ok, socket}
